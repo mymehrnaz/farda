@@ -1,6 +1,7 @@
 import React from "react";
 import Weather from "./Weather";
 import './App.css';
+import Jank from "./Jank";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
     
         
       </div>
+      <hr/>
+      <Jank/>
     </div>
   );
 }

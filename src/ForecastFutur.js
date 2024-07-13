@@ -1,22 +1,19 @@
 import React from "react";
-import "./App.css";
-import Jank from "./Jank";
 
-export default function ForecastFutur(){
-    return(
-        <div className="csgrid">
-             <div className="container text-center">
-  <div class="row">
-    <div className="col">Sat<span>☀️</span><span>23°</span><span>17°</span></div>
-    <div className="col">Sun<span>🌥</span><span>21°</span><span>10°</span></div>
-    <div className="col">Mon<span>🌤</span><span >25°</span><span>31°</span></div>
-    <div className="col">Tue<span>☀️</span><span >30°</span><span>36°</span></div>
-  </div>
-  
-  </div>
-  <hr/>
-  <Jank/>
-</div>
-        
-    );
+export default function ForecastFutur(props){
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let day = days[props.date.getDay()];
+  let hours = props.date.getHours();
+  if(hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = props.date.getMinutes();
+  if (minutes < 10){
+    minutes = `0${minutes}`;
+  }
+  return(
+    <div>
+      {day} {hours}: {minutes}
+    </div>
+  );
 }
