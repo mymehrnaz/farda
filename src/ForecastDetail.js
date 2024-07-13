@@ -1,5 +1,5 @@
  import React from "react";
- import ForecastFutur from "./ForecastFutur";
+ import ForecastDate from "./ForecastDate";
  import Icon from "./Icon";
  import Temperaturey from "./Temperaturey";
 
@@ -9,7 +9,7 @@
       <h1>{props.data.city}</h1>
       <ul>
         <li>
-          <ForecastFutur date={props.data.date}/>
+          <ForecastDate date={props.data.date}/>
         </li>
         <li className="text-capitalize">{props.data.description}</li>
       </ul>
