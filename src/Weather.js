@@ -11,10 +11,10 @@ export default function Weather(props){
    function handleResponse(response){
     setWeatherData({
       ready:true,
-      coordinates:response.data.coord,
+      coordinates:response.data.coordinates,
       temperature:response.data.main.temp,
       humidity:response.data.main.humidity,
-      date:new Date(response.data.dt*1000),
+      date:new Date(response.data.dt * 1000),
       description:response.data.weather[0].description,
       icon:response.data.weather[0].icon,
       wind:response.data.wind.speed,
@@ -29,13 +29,14 @@ export default function Weather(props){
     setCity(event.target.value);
    }
    function search(){
-    const apiKey = "0dc40d3d7cda209ca40e77430c74cf57";
+    const apiKey = "ca0db41e2e878c74a1dfc7ffece370d4";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
    }
    if (weatherData.ready){
     return(
   <div className="Weather">
+    
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
@@ -48,7 +49,7 @@ export default function Weather(props){
         </div>
       </form>
     <ForecastDetail data={weatherData}/>
-    <ForecastDate coordinates={weatherData.coordinates}/>
+    <ForecastDate coordinates={weatherData.coordinates} city={weatherData.city}/>
   </div>
     );
   }else{
