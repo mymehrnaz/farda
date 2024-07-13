@@ -1,22 +1,40 @@
 import React from "react";
 import Weather from "./Weather";
-import Jank from "./Jank";
-import './App.css';
+import "./App.css";
 
-
-  function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="Tehran"/>
-        
-    
-        
+        <Weather defaultCity="Tehran" />
+
+        <footer>
+          This project was coded by{" "}
+          <a
+            href="https://github.com/mymehrnaz/"
+            target="_blank"
+            rel=" noreferrer"
+          >
+            Mehrnaz Sadeghian
+          </a>{" "}
+          and is{" "}
+          <a
+            href="https://github.com/mymehrnaz/farda"
+            target="_blank"
+            rel=" noreferrer"
+          >
+             on GitHub
+          </a>{" "}
+          and is on{" "}
+          <a
+            href="https://netlify.app/"
+            target="_blank"
+            rel=" noreferrer"
+          >
+             Netlify
+          </a>
+        </footer>
       </div>
-      <hr/>
-      <Jank/>
     </div>
   );
 }
-
-export default App;
