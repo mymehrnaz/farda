@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Jank";
 import "./App.css";
 import Jank from "./Jank";
 
